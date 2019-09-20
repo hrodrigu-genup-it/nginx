@@ -1,4 +1,6 @@
+---
 - name: Install nginx
+  hosts: all
   become: true
 
   tasks:
@@ -21,3 +23,6 @@
     service:
       name: nginx
       state: started
+
+  - name: Install mlocate
+    yum: pkg=mlocate state=latest
